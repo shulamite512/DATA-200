@@ -24,20 +24,20 @@
 
 # 1. Implementing web scraping
 ## 1.1 Download Browser Driver 
-![Driver](docs\chrome-driver.png)
+![Driver](docs/chrome-driver.png)
 
 ## Set my path variable 
-![path ](docs\env-path.png)
+![path ](docs/env-path.png)
 
 ## 1.2 Implemented retrieve_stock_web()
 
 Fetched the data from yahoo finance using start date an end date from the GUI version 
 
-![web scrapping from web](docs\gui-web-scrapping.png)
+![web scrapping from web](docs/gui-web-scrapping.png)
 
 The fetches stock data of Netflix (NFLX)
 
-![data of netflix](docs\gui-nflx.png)
+![data of netflix](docs/gui-nflx.png)
 
 ## 1.4 Tested the code
 
@@ -50,16 +50,16 @@ The fetches stock data of Netflix (NFLX)
 6. Save the data. Restart the app. Load the data again.
 
 ### Interface
-![GUI](docs\gui.png)
+![GUI](docs/gui.png)
 
 ### GUI chart
-![G chart](docs\gui-chart.png)
+![G chart](docs/gui-chart.png)
 
 ### GUI report
-![report](docs\gui-report.png)
+![report](docs/gui-report.png)
 
 ### GUI History
-![History](docs\gui-hist.png)
+![History](docs/gui-hist.png)
 
 ### Updating shares in GUI
 
@@ -85,33 +85,33 @@ The fetches stock data of Netflix (NFLX)
 ![delete](docs/delete-share.png)
 
 ### Stock report 
-![report](docs\stock-report.png)
+![report](docs/stock-report.png)
 
 ### Stock chart
-![chart](docs\chart.png)
+![chart](docs/chart.png)
 
 ### Retrieve data from web
-![data ](docs\retrieve-data.png)
+![data ](docs/retrieve-data.png)
 
 # 2. Data save/import/load from CSV 
 
 ### Importing data from GUI
-![data import](docs\gui-import-data.png)
+![data import](docs/gui-import-data.png)
 
 ### Saving the data in GUI
-![data save](docs\gui-save-data.png)
+![data save](docs/gui-save-data.png)
 
 ### All the stocks in the stock DB
 ![Stocks](docs/stocks-in-db.png)
 
 ### Number of records fetched 
-![records](docs\records-fetched.png)
+![records](docs/records-fetched.png)
 
 ### selecting required stock using sqlite from dailyData
-![query](docs\query-import.png)
+![query](docs/query-import.png)
 
 ### Records in the DB
-![DB](docs\data-in-db.png)
+![DB](docs/data-in-db.png)
 
 
 
