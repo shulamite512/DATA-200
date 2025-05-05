@@ -1,4 +1,4 @@
-# stock_GUI.py (Modernized GUI with Style Enhancements)
+
 
 from datetime import datetime
 from os import path
@@ -19,9 +19,7 @@ class StockApp:
         self.root.geometry("750x500")
         self.root.configure(bg="#f0f4f8")
 
-        # Setup Menubar
         self.menubar = Menu(self.root, bg="#d9e4f5", fg="black")
-
         filemenu = Menu(self.menubar, tearoff=0, bg="white")
         filemenu.add_command(label="📂 Load Data", command=self.load)
         filemenu.add_command(label="💾 Save Data", command=self.save)
@@ -37,17 +35,11 @@ class StockApp:
         self.menubar.add_cascade(label="Chart", menu=chartmenu)
 
         self.root.config(menu=self.menubar)
-
-        # Setup Heading
         self.headingLabel = Label(self.root, text="📊 Stock Portfolio", font=("Segoe UI", 18, "bold"), bg="#f0f4f8", fg="#003366")
         self.headingLabel.pack(pady=10)
-
-        # Stock List
         self.stockList = Listbox(self.root, width=50, font=("Segoe UI", 12), fg="#003366", selectbackground="#add8e6")
         self.stockList.pack(padx=10, pady=5)
         self.stockList.bind('<<ListboxSelect>>', self.update_data)
-
-        # Add Tabs
         self.tabs = ttk.Notebook(self.root)
 
         self.mainTab = Frame(self.tabs, bg="#ffffff")
@@ -61,7 +53,6 @@ class StockApp:
 
         self.tabs.pack(expand=1, fill="both")
 
-        # Main Tab - Add stock
         Label(self.mainTab, text="Symbol", bg="#ffffff", font=("Segoe UI", 10)).grid(row=0, column=0, sticky=W, padx=10, pady=5)
         Label(self.mainTab, text="Name", bg="#ffffff", font=("Segoe UI", 10)).grid(row=1, column=0, sticky=W, padx=10, pady=5)
         Label(self.mainTab, text="Shares", bg="#ffffff", font=("Segoe UI", 10)).grid(row=2, column=0, sticky=W, padx=10, pady=5)
@@ -75,7 +66,6 @@ class StockApp:
 
         Button(self.mainTab, text="➕ Add Stock", command=self.add_stock, bg="#4CAF50", fg="white", font=("Segoe UI", 10)).grid(row=3, column=1, padx=10, pady=5)
 
-        # Buy/Sell Shares
         Label(self.mainTab, text="Update Shares", bg="#ffffff", font=("Segoe UI", 10)).grid(row=4, column=0, sticky=W, padx=10, pady=5)
         self.updateSharesEntry = Entry(self.mainTab)
         self.updateSharesEntry.grid(row=4, column=1, padx=10, pady=5)
@@ -83,11 +73,9 @@ class StockApp:
         Button(self.mainTab, text="Buy", command=self.buy_shares, bg="#2196F3", fg="white", font=("Segoe UI", 10)).grid(row=5, column=0, padx=10, pady=5)
         Button(self.mainTab, text="Sell", command=self.sell_shares, bg="#f44336", fg="white", font=("Segoe UI", 10)).grid(row=5, column=1, padx=10, pady=5)
 
-        # History Tab
         self.dailyDataList = Text(self.historyTab, width=85, height=15, bg="#e9f1f7", font=("Consolas", 10))
         self.dailyDataList.pack(padx=10, pady=10)
 
-        # Report Tab
         self.stockReport = Text(self.reportTab, width=85, height=15, bg="#f7f7f7", font=("Consolas", 10))
         self.stockReport.pack(padx=10, pady=10)
 
@@ -154,6 +142,8 @@ class StockApp:
                 self.headingLabel['text'] = f"{stock.name} - {stock.shares} Shares"
         self.updateSharesEntry.delete(0, END)
 
+    
+    
     def scrape_web_data(self):
         dateFrom = simpledialog.askstring("Start Date", "Enter start date (m/d/yy)")
         dateTo = simpledialog.askstring("End Date", "Enter end date (m/d/yy)")
@@ -176,6 +166,5 @@ class StockApp:
         symbol = self.stockList.get(self.stockList.curselection())
         display_stock_chart(self.stock_list, symbol)
 
-# Entry Point
 if __name__ == "__main__":
     app = StockApp()

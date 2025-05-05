@@ -141,8 +141,8 @@ def manage_data(stock_list):
 def retrieve_from_web(stock_list):
     dateFrom = input("Enter start date (m/d/yy): ")
     dateTo = input("Enter end date (m/d/yy): ")
-    stock_data.retrieve_stock_web(dateFrom, dateTo, stock_list)
-    print("Data retrieved from web.")
+    count=stock_data.retrieve_stock_web(dateFrom, dateTo, stock_list)
+    print(f"{count} Data retrieved from web.")
 
 # Import data from CSV
 def import_csv(stock_list):
