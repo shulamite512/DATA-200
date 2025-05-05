@@ -1,11 +1,9 @@
 import Lab_1.lab1_ref as lab1_ref
 import unittest
 import random
-# Unit Tests
 class TestCheckMyGradeApp(unittest.TestCase):
     def setUp(self):
         self.app = lab1_ref.CheckMyGradeApp()
-        # Load initial data for testing, if needed
 
     def test_add_student(self):
         self.app.add_student("test@example.com", "Test", "Student", "DATA101", "A", "90")
